@@ -1,0 +1,7 @@
+<p-dataTable [value]="data">
+  <p-column *ngFor="let column of visibleColumns()" [header]="column.field">
+    <ng-template pTemplate="body" let-rowData="rowData">
+      <div [innerHTML]="formats[column.field](rowData)"></div>
+    </ng-template>
+  </p-column>
+</p-dataTable>
